@@ -7,18 +7,19 @@ public class TestPairs {
 
 
     static void testNumberToPair(int pairNumber,
-                                 Colors expectedMajor,
-                                 Colors expectedMinor) {
+                                 MajorColors expectedMajor,
+                                 MinorColors expectedMinor) {
         ColorPair colorPair = GetColorFromPairNumber(pairNumber);
         System.out.println("Got pair " + colorPair.ToString());
+
         assert (colorPair.getMajor() == expectedMajor);
         assert (colorPair.getMinor() == expectedMinor);
 
     }
 
     static void testPairToNumber(
-            Colors major,
-            Colors minor,
+            MajorColors major,
+            MinorColors minor,
             int expectedPairNumber) {
         int pairNumber = GetPairNumberFromColor(major, minor);
         System.out.println("Got pair number " + pairNumber);

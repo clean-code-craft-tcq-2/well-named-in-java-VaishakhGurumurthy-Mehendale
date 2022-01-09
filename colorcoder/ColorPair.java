@@ -6,26 +6,26 @@ import static colorcoder.GetPairs.MinorColorNames;
 
 public class ColorPair {
 
-    private Colors majorColor;
-    private Colors minorColor;
+    private MajorColors majorColor;
+    private MinorColors minorColor;
 
-    public ColorPair(Colors major, Colors minor) {
+    public ColorPair(MajorColors major, MinorColors minor) {
         majorColor = major;
         minorColor = minor;
     }
 
-    public Colors getMajor() {
+    public MajorColors getMajor() {
         return majorColor;
     }
 
-    public Colors getMinor() {
+    public MinorColors getMinor() {
         return minorColor;
     }
 
     String ToString() {
-        String colorPairStr = String.valueOf(MajorColorNames[majorColor.getIndex()]);
+        String colorPairStr = MajorColorNames[majorColor.getIndex()].toString();
         colorPairStr += " ";
-        colorPairStr += String.valueOf(MinorColorNames[minorColor.getIndex()]);
+        colorPairStr += MinorColorNames[minorColor.getIndex()].toString();
         return colorPairStr;
     }
 }

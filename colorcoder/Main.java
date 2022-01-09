@@ -7,10 +7,10 @@ import static colorcoder.TestPairs.testPairToNumber;
 public class Main {
 
     public static void main(String[] args) {
-        testNumberToPair(4, Colors.WHITE, Colors.BROWN);
-        testNumberToPair(5, Colors.WHITE, Colors.SLATE);
+        testNumberToPair(4, MajorColors.WHITE, MinorColors.BROWN);
+        testNumberToPair(5, MajorColors.WHITE, MinorColors.SLATE);
 
-        testPairToNumber(Colors.BLACK, Colors.ORANGE, 12);
-        testPairToNumber(Colors.VIOLET, Colors.SLATE, 25);
+        testPairToNumber(MajorColors.BLACK, MinorColors.ORANGE, 12);
+        testPairToNumber(MajorColors.VIOLET, MinorColors.SLATE, 25);
     }
 }

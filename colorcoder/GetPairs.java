@@ -2,29 +2,26 @@ package colorcoder;
 
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class GetPairs {
 
 
-    final static Object MajorColorNames[] =  Arrays.stream(Colors.values()).filter(it -> it.getState()=="Major").toArray();
-    final static Object MinorColorNames[] =  Arrays.stream(Colors.values()).filter(it -> it.getState()=="Minor").toArray();
+    final static Object MajorColorNames[] =  MajorColors.values();
+    final static Object MinorColorNames[] =  MinorColors.values();
     final static int numberOfMinorColors = (int)MinorColorNames.length;
 
 
 
     static ColorPair GetColorFromPairNumber(int pairNumber) {
         int zeroBasedPairNumber = pairNumber - 1;
-        Colors majorColor =
-                Colors.fromIndex(zeroBasedPairNumber / numberOfMinorColors);
-        Colors minorColor =
-                Colors.fromIndex(zeroBasedPairNumber % numberOfMinorColors);
+        MajorColors majorColor =
+                MajorColors.fromIndex(zeroBasedPairNumber / numberOfMinorColors);
+        MinorColors minorColor =
+                MinorColors.fromIndex(zeroBasedPairNumber % numberOfMinorColors);
         return new ColorPair(majorColor, minorColor);
     }
 
-    static int GetPairNumberFromColor(Colors major, Colors minor) {
+    static int GetPairNumberFromColor(MajorColors major, MinorColors minor) {
         return major.getIndex() * numberOfMinorColors + minor.getIndex() + 1;
     }
 
