@@ -18,12 +18,4 @@ public enum MinorColors {
         return index;
     }
 
-    public static MinorColors fromIndex(int index) {
-        for (MinorColors color : MinorColors.values()) {
-            if (color.getIndex() == index) {
-                return color;
-            }
-        }
-        return null;
-    }
 }

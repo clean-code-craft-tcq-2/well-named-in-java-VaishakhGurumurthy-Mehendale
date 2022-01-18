@@ -26,6 +26,9 @@ public class GetPairs {
 
     static Object fromIndex(Object[] colors,int index){
 
+        if(index > 4){
+            return null;
+        }
         Object color = colors[index];
         return color;
 
