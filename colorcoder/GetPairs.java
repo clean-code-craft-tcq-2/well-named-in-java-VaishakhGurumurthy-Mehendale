@@ -2,6 +2,7 @@ package colorcoder;
 
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class GetPairs {
 
@@ -14,15 +15,20 @@ public class GetPairs {
 
     static ColorPair GetColorFromPairNumber(int pairNumber) {
         int zeroBasedPairNumber = pairNumber - 1;
-        MajorColors majorColor =
-                MajorColors.fromIndex(zeroBasedPairNumber / numberOfMinorColors);
-        MinorColors minorColor =
-                MinorColors.fromIndex(zeroBasedPairNumber % numberOfMinorColors);
+        MajorColors majorColor = (MajorColors) fromIndex(MajorColorNames,zeroBasedPairNumber / numberOfMinorColors);
+        MinorColors minorColor = (MinorColors) fromIndex(MinorColorNames,zeroBasedPairNumber % numberOfMinorColors);
         return new ColorPair(majorColor, minorColor);
     }
 
     static int GetPairNumberFromColor(MajorColors major, MinorColors minor) {
         return major.getIndex() * numberOfMinorColors + minor.getIndex() + 1;
+    }
+
+    static Object fromIndex(Object[] colors,int index){
+
+        Object color = colors[index];
+        return color;
+
     }
 
 
